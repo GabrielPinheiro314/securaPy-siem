@@ -27,7 +27,7 @@ Como Executar o Projeto
 2. Abra o terminal (CMD ou PowerShell) na pasta raiz do projeto.
 3. Execute o comando principal:
    ```bash
-   python main.py
+   (Comnado) python main.py
 
 ## 👥 Equipe de Desenvolvimento (CyberShield)
 * [Gabriel](https://github.com/Gabrielpinheiro314)
