@@ -18,3 +18,11 @@ Para executar o sistema básico de coleta e análise baseada em regras:
 ```bash
 python main.py
 ```
+
+
+Equipe de Desenvolvimento (CyberShield)
+* [Gabriel](https://github.com/GabrielPinheiro314)
+* [Artur](https://github.com/Ninjinha64 )
+* [Vitória](https://github.com/vitoresca)
+* [Pedro](https://github.com/PellKkj)
+* [Yuri](https://github.com/yuripregeljhoffmann)
