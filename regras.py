@@ -76,9 +76,13 @@ def avaliar_regra(regra, evento):
                 viola_regra = True
                 break
                 
-    elif condicao == "falha_login":
-        if evento.get("tipo") == regra.get("status_alvo", "FAIL"):
-            viola_regra = True
+    elif condicao == "reconhecimento":
+        detalhes = evento.get("detalhes", "")
+        url = detalhes.split("url=")[-1].split()[0] if "url=" in detalhes else ""
+        for url_suspeita in regra.get("urls_suspeitas", []):
+            if url_suspeita in url:
+                viola_regra = True
+                break
 
     if viola_regra:
         severidade = classificar_severidade(regra.get("severidade_base", 1))
