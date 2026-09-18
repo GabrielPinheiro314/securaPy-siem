@@ -6,7 +6,7 @@
             "descricao": "Tentativa de login com usuário root, admin, sa ou oracle",
             "fonte": "auth",
             "condicao": "usuario_privilegiado",
-            "usuarios_alvo": ["root", "admin", "sa", "oracle", "administrator"],
+            "usuarios_alvo": ["root", "admin", "sa", "oracle"],
             "severidade_base": 6,
             "ativa": true
         },
@@ -23,31 +23,31 @@
         {
             "id": "R003",
             "nome": "Tentativa de Path Traversal",
-            "descricao": "Requisição web contendo caracteres de subida de diretório (../)",
+            "descricao": "URL contém padrões de path traversal (../)",
             "fonte": "web",
             "condicao": "path_traversal",
-            "padroes": ["../", "..\\", "%2e%2e%2f"],
-            "severidade_base": 8,
+            "padroes": ["../", "..\\", "/etc/passwd"],
+            "severidade_base": 9,
             "ativa": true
         },
         {
             "id": "R004",
             "nome": "Tentativa de XSS",
-            "descricao": "Requisição web contendo provável Cross-Site Scripting",
+            "descricao": "URL contém padrões de Cross-Site Scripting",
             "fonte": "web",
             "condicao": "xss_injection",
             "padroes": ["<script>", "javascript:", "onerror="],
-            "severidade_base": 7,
+            "severidade_base": 8,
             "ativa": true
         },
         {
             "id": "R005",
-            "nome": "Falha de Autenticação",
-            "descricao": "Evento de falha de login detectado",
-            "fonte": "auth",
-            "condicao": "falha_login",
-            "status_alvo": "FAIL",
-            "severidade_base": 4,
+            "nome": "Reconhecimento Web",
+            "descricao": "Acesso a URLs comuns de reconhecimento/enumeração",
+            "fonte": "web",
+            "condicao": "reconhecimento",
+            "urls_suspeitas": ["/wp-admin", "/phpmyadmin", "/shell.php", "/.env", "/admin", "/wp-login.php"],
+            "severidade_base": 5,
             "ativa": true
         }
     ]
